@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get("/", function () {
-  return "olá";
+  return view("layouts.pages.index");
 })->name("product.index");
 
 /*

@@ -24,7 +24,10 @@ class ProductController extends Controller
 	public function index()
 	{
 		$products = ["Produto 1", "Produto 2"];
-		return view("layouts.pages.products.product-list", compact("products"));
+		$list = [];
+		$teste = "123";
+		$teste3 = ["a"];
+		return view("layouts.pages.products.product-list", compact("products", "teste", "teste3", "list"));
 	}
 
 	public function show($id){

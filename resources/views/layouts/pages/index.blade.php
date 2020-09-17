@@ -7,9 +7,7 @@
 @push('script')
 <script>
   (function(){
-    window.onload = _ => {
-      alert("bem vindo")
-    }
+    console.log("JS ok")
   })();
 </script>    
 @endpush

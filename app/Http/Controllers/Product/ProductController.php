@@ -18,7 +18,7 @@ class ProductController extends Controller
 	public function create(){
 		//dd($this->request);
 		$teste = [1,2,3];
-		return view("layouts.pages.products.product-list", compact("teste"));
+		return view("layouts.pages.products.create", compact("teste"));
 	}
 
 	public function index()
@@ -35,15 +35,26 @@ class ProductController extends Controller
 	}
 
 	public function edit($id){
-		return "Editando produto de id {$id}";
+		return view("layouts.pages.products.edit");
 	}
 
-	public function store(){
+	public function store(Request $request){
+		//$request->all();
+		//$request->name;
+		//$request->file("photo") || $request->photo;
+		//$request->file("photo")->isValid() || extension() || getClientOriginalName();
+		if($request->photo->isValid()) {
+			$name_file = $request->name;
+			$request->photo->store("produtos");
+		}
 		return "Cadastrando produto";
 	}
 
-	public function update(){
-		return "Atualizando produto";
+	public function update(Request $request){
+		$all = $request->all();
+	
+		dd($all['name']);
+		return "Atualizado produto";
 	}
 
 	public function destroy(){

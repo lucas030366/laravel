@@ -40,6 +40,8 @@
 <p>não autenticado</p>
 @endauth
 
+<a href="{{ route('produtos.create') }}">Cadastrar</a>
+
 <hr>
 
 @endsection

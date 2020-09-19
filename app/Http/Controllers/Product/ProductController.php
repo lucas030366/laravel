@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Product;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreUpdateProducts;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -38,7 +39,9 @@ class ProductController extends Controller
 		return view("layouts.pages.products.edit");
 	}
 
-	public function store(Request $request){
+	public function store(StoreUpdateProducts $request){
+
+		dd("ok");
 		//$request->all();
 		//$request->name;
 		//$request->file("photo") || $request->photo;

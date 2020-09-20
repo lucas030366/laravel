@@ -17,7 +17,7 @@ class StoreUpdateProducts extends FormRequest
 		return [
 			"name" => ["required", "min:3", "max:255"],
 			"description" => ["nullable", "min:3", "max:10000"],
-			"photo" => ["required", "image"]
+			"image" => ["nullable", "image"]
 		];
 	}
 
@@ -25,8 +25,7 @@ class StoreUpdateProducts extends FormRequest
 		return [
 			"name.required" => "Campo nome é obrigatório",
 			"name.min" => "Caracteres mínimo: 3",
-			"name.max" => "Caracteres maximo: 255",
-			"photo.required" => "O arquivo precisa ser do tipo imagem"
+			"name.max" => "Caracteres maximo: 255"			
 		];
 	}
 }

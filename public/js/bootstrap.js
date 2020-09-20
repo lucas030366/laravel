@@ -19323,17 +19323,6 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./resources/js/app.js":
-/*!*****************************!*\
-  !*** ./resources/js/app.js ***!
-  \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
-
-/***/ }),
-
 /***/ "./resources/js/bootstrap.js":
 /*!***********************************!*\
   !*** ./resources/js/bootstrap.js ***!
@@ -19389,13 +19378,13 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ }),
 
 /***/ 0:
-/*!**********************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/bootstrap.scss ./resources/sass/mdb5.scss ***!
-  \**********************************************************************************************/
+/*!****************************************************************************************************!*\
+  !*** multi ./resources/js/bootstrap.js ./resources/sass/bootstrap.scss ./resources/sass/mdb5.scss ***!
+  \****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/pc/Downloads/laravel/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /home/pc/Downloads/laravel/resources/js/bootstrap.js */"./resources/js/bootstrap.js");
 __webpack_require__(/*! /home/pc/Downloads/laravel/resources/sass/bootstrap.scss */"./resources/sass/bootstrap.scss");
 module.exports = __webpack_require__(/*! /home/pc/Downloads/laravel/resources/sass/mdb5.scss */"./resources/sass/mdb5.scss");
 

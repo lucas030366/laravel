@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Product;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreUpdateProducts;
+use App\Models\Product;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class ProductController extends Controller
 {
@@ -24,15 +26,15 @@ class ProductController extends Controller
 
 	public function index()
 	{
-		$products = ["Produto 1", "Produto 2"];
-		$list = [];
-		$teste = "123";
-		$teste3 = ["a"];
-		return view("layouts.pages.products.product-list", compact("products", "teste", "teste3", "list"));
+		$products = Product::paginate();
+		return view("layouts.pages.products.product-list", ["products" => $products]);
 	}
 
 	public function show($id){
-		return view("layouts.pages.products.product", compact("id"));
+		//$product = Product::where("id", $id)->first(); //get Retorna um array (precisa iterar)
+		$product = Product::find($id);
+		if(!$product) return redirect()->back();
+		return view("layouts.pages.products.product", ["product" => $product]);
 	}
 
 	public function edit($id){

@@ -18,8 +18,13 @@
       <tr>     
         <td>{{$product->name}}</td>
         <td>{{$product->price, 2}}</td>
-        <td>
-          <a href="{{route('produtos.show', $product->id )}}">Detalhes</a>
+        <td style="width: 20%">
+          <a href="{{route('produtos.show', $product->id )}}" class="btn btn-success btn-sm">
+            Detalhes
+          </a>
+          <a href="{{route('produtos.edit', $product->id )}}" class="btn btn-info btn-sm">
+            Editar
+          </a>
         </td> 
       </tr> 
       @empty

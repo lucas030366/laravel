@@ -26,7 +26,7 @@ class ProductController extends Controller
 	
 	public function index()
 	{
-		$products = Product::orderBy("created_at", "desc")->paginate();
+		$products = Product::orderBy("updated_at", "desc")->paginate();
 		return view("layouts.pages.products.product-list", ["products" => $products]);
 	}
 	
@@ -40,7 +40,8 @@ class ProductController extends Controller
 	
 	public function edit($id)
 	{
-		return view("layouts.pages.products.edit");
+		$product = $this->repo_product->find($id);
+		return view("layouts.pages.products.edit", ["product" => $product]);
 	}
 	
 	public function store(StoreUpdateProducts $request)
@@ -67,12 +68,12 @@ class ProductController extends Controller
 		return redirect()->route("produtos.index");
 	}
 	
-	public function update(Request $request)
+	public function update(StoreUpdateProducts $request, $id)
 	{
-		$all = $request->all();
-		
-		dd($all['name']);
-		return "Atualizado produto";
+		$data = $request->only(["name", "price", "description"]);
+		$product = $this->repo_product;
+		$product->find($id)->update($data);	
+		return redirect()->route("produtos.index");
 	}
 	
 	public function destroy($id)

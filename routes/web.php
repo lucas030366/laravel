@@ -20,5 +20,6 @@ Route::get("/login", function(){
   return "Login";
 })->name("login");
 
+Route::any("produtos/search", "Product\ProductController@search")->name("produtos.search");
 Route::resource("produtos", "Product\ProductController")->middleware([]);
 //php artisan make:controller ProductController --resource
